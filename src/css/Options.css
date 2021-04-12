@@ -1,0 +1,12 @@
+.OptionTable {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.OptionButton {
+  height: 50px;
+  font-weight: bold;
+}
