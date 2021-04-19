@@ -10,12 +10,42 @@ export default class Backs extends React.Component {
             <th colSpan="6">Change Colour</th>
           </tr>
           <tr>
-            <td><button className="BacksButton" id="GreyBack" onClick="changeBack('grey')"></button></td>
-            <td><button className="BacksButton" id="BlueBack" onClick="changeBack('blue')"></button></td>
-            <td><button className="BacksButton" id="GreenBack" onClick="changeBack('green')"></button></td>
-            <td><button className="BacksButton" id="RedBack" onClick="changeBack('red')"></button></td>
-            <td><button className="BacksButton" id="PurpleBack" onClick="changeBack('purple')"></button></td>
-            <td><button className="BacksButton" id="YellowBack" onClick="changeBack('yellow')"></button></td>
+            <td>
+              <img
+                className="greyBack"
+                src={`${process.env.PUBLIC_URL}/img/backs/grey_back.png`}
+              />
+            </td>
+            <td>
+              <img
+                className="greyBack"
+                src={`${process.env.PUBLIC_URL}/img/backs/blue_back.png`}
+              />
+            </td>
+            <td>
+              <img
+                className="greyBack"
+                src={`${process.env.PUBLIC_URL}/img/backs/green_back.png`}
+              />
+            </td>
+            <td>
+              <img
+                className="greyBack"
+                src={`${process.env.PUBLIC_URL}/img/backs/red_back.png`}
+              />
+            </td>
+            <td>
+              <img
+                className="greyBack"
+                src={`${process.env.PUBLIC_URL}/img/backs/purple_back.png`}
+              />
+            </td>
+            <td>
+              <img
+                className="greyBack"
+                src={`${process.env.PUBLIC_URL}/img/backs/yellow_back.png`}
+              />
+            </td>
           </tr>
         </tbody>
       </table>

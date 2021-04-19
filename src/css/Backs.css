@@ -10,27 +10,22 @@
   height: 100px;
 }
 
-#GreyBack {
-  background-image: url('../img/backs/grey_back.png');
-  background-size: cover;
+.greyBack {
+  width: 67px;
+  height: 100px;
 }
 #BlueBack {
-  background-image: url('../img/backs/blue_back.png');
   background-size: cover;
 }
 #GreenBack {
-  background-image: url('../img/backs/green_back.png');
   background-size: cover;
 }
 #RedBack {
-  background-image: url('../img/backs/red_back.png');
   background-size: cover;
 }
 #PurpleBack {
-  background-image: url('../img/backs/purple_back.png');
   background-size: cover;
 }
 #YellowBack {
-  background-image: url('../img/backs/yellow_back.png');
   background-size: cover;
 }
