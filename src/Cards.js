@@ -3,7 +3,7 @@ import './css/Cards.css';
 
 export default function Cards(props) {
   const cardImg = props.drawnCard ? `${process.env.PUBLIC_URL}/img/cards/${props.drawnCard}.png` : null;
-  const backImg = props.backColour ? `${process.env.PUBLIC_URL}/img/backs/${props.backColour}_back.png` : null;
+  const backImg = `${process.env.PUBLIC_URL}/img/backs/${props.backColour}_back.png`;
 
   return (
     <table className="CardTable">

@@ -15,13 +15,25 @@ export default function App() {
   var card = '';
 
   function handleOptionsClick() {
-    let newDeck = buildDeck();
+    const newDeck = buildDeck();
     const newDrawnCard = newDeck[0];
     newDeck.shift();
 
     setDeck(newDeck);
     setDrawnCard(newDrawnCard);
     setRemainingCards(51);
+  }
+
+  function handleHigherClick() {
+    if (deck.length > 0) {
+      drawCard();
+    }
+  }
+
+  function handleLowerClick() {
+    if (deck.length > 0) {
+      drawCard();
+    }
   }
 
   function buildDeck()
@@ -56,9 +68,15 @@ export default function App() {
   }
 
   function drawCard(d) {
-    var card = d[0];
+    const newCurrentCard = drawnCard;
+    const newDrawnCard = deck[0];
+    const newDeck = deck;
+    newDeck.shift();
 
-    return card;
+    setCurrentCard(newCurrentCard);
+    setDrawnCard(newDrawnCard);
+    setDeck(newDeck);
+    setRemainingCards(remainingCards - 1);
   }
 
   return (
@@ -69,6 +87,8 @@ export default function App() {
       <div className="Game">
         <Controls
           onOptionsClick={handleOptionsClick}
+          onHigherClick={handleHigherClick}
+          onLowerClick={handleLowerClick}
           drawnCard={drawnCard}
           remaining={remainingCards}
           backColour={backColour}

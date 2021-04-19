@@ -17,8 +17,8 @@ export default function Controls(props) {
       <table className="ControlTable">
         <tbody>
           <tr>
-            <td><button className="ControlButton" onClick="highLow('h')">Higher</button></td>
-            <td><button className="ControlButton" onClick="highLow('l')">Lower</button></td>
+            <td><button className="ControlButton" onClick={props.onHigherClick}>Higher</button></td>
+            <td><button className="ControlButton" onClick={props.onLowerClick}>Lower</button></td>
           </tr>
         </tbody>
       </table>
