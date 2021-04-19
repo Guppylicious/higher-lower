@@ -5,21 +5,25 @@ import Cards from './Cards';
 import Score from './Score';
 import Backs from './Backs';
 
-export default class Controls extends React.Component {
-  render() {
-    return (
-      <div class="Controls">
-        <Options />
-        <Cards />
-        <table class="ControlTable">
+export default function Controls(props) {
+  return (
+    <div className="Controls">
+      <Options onClick={props.onOptionsClick} />
+      <Cards
+        drawnCard={props.drawnCard}
+        remaining={props.remaining}
+        backColour={props.backColour}
+      />
+      <table className="ControlTable">
+        <tbody>
           <tr>
-            <td><button class="ControlButton" onclick="highLow('h')">Higher</button></td>
-            <td><button class="ControlButton" onclick="highLow('l')">Lower</button></td>
+            <td><button className="ControlButton" onClick="highLow('h')">Higher</button></td>
+            <td><button className="ControlButton" onClick="highLow('l')">Lower</button></td>
           </tr>
-        </table>
-        <Score />
-        <Backs />
-      </div>
-    );
-  }
+        </tbody>
+      </table>
+      <Score />
+      <Backs />
+    </div>
+  );
 }
