@@ -1,14 +1,14 @@
 import React from 'react';
 import './css/Options.css';
 
-export default class Options extends React.Component {
-  render() {
-    return (
-      <table class="OptionTable">
+export default function Options(props) {
+  return (
+    <table className="OptionTable">
+      <tbody>
         <tr>
-          <td><button class="OptionButton" id="start" onclick="start()">New Game</button></td>
+          <td><button className="OptionButton" onClick={props.onClick}>New Game</button></td>
         </tr>
-      </table>
-    );
-  }
+      </tbody>
+    </table>
+  );
 }

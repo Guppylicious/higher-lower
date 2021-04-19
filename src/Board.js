@@ -7,7 +7,7 @@ export default class Board extends React.Component {
     let row = []
     for (var i = 1; i <= 13; i++) {
       let card = suit + '_' + i;
-      row.push(<DealtCell card={card} />);
+      row.push(<DealtCell key={card} card={card} />);
     }
 
     return row;

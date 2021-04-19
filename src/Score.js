@@ -4,7 +4,8 @@ import './css/Score.css';
 export default class Score extends React.Component {
   render() {
     return (
-      <table class="ScoreTable">
+      <table className="ScoreTable">
+        <tbody>
           <tr>
               <th>Correct</th>
               <th>Wrong</th>
@@ -13,6 +14,7 @@ export default class Score extends React.Component {
               <td><span id="Correct">0</span></td>
               <td><span id="Wrong">0</span></td>
           </tr>
+        </tbody>
       </table>
     );
   }

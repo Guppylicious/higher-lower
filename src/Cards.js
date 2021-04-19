@@ -1,19 +1,32 @@
 import React from 'react';
 import './css/Cards.css';
 
-export default class Cards extends React.Component {
-  render() {
-    return (
-      <table class="CardTable">
+export default function Cards(props) {
+  const cardImg = props.drawnCard ? require(`./img/cards/${props.drawnCard}.png`).default : null;
+  const backImg = props.backColour ? require(`./img/backs/${props.backColour}_back.png`).default : null;
+
+  return (
+    <table className="CardTable">
+      <tbody>
         <tr>
-          <th>Card Pile (<span id="Remaining">0</span>)</th>
+          <th>Card Pile (<span id="Remaining">{props.remaining}</span>)</th>
           <th>Drawn Card</th>
         </tr>
         <tr>
-          <td class="CardPile" id="CardPile"></td>
-          <td class="DrawnCard" id="DrawnCard"></td>
+          <td>
+            <img
+              className="CardPile"
+              src={backImg}
+            />
+          </td>
+          <td>
+            <img
+              className="DrawnCard"
+              src={cardImg}
+            />
+          </td>
         </tr>
-      </table>
-    );
-  }
+      </tbody>
+    </table>
+  );
 }
