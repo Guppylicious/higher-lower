@@ -5,6 +5,7 @@ import Board from './Board';
 
 export default function App() {
   const [deck, setDeck] = useState([]);
+  const [dealtCards, setDealtCards] = useState([]);
   const [drawnCard, setDrawnCard] = useState('');
   const [currentCard, setCurrentCard] = useState('');
   const [remainingCards, setRemainingCards] = useState(0);
@@ -67,15 +68,19 @@ export default function App() {
     return d;
   }
 
-  function drawCard(d) {
+  function drawCard() {
     const newCurrentCard = drawnCard;
     const newDrawnCard = deck[0];
     const newDeck = deck;
+    const newDealtCards = dealtCards;
+
     newDeck.shift();
+    newDealtCards.push(newCurrentCard);
 
     setCurrentCard(newCurrentCard);
     setDrawnCard(newDrawnCard);
     setDeck(newDeck);
+    setDealtCards(newDealtCards);
     setRemainingCards(remainingCards - 1);
   }
 
@@ -94,7 +99,7 @@ export default function App() {
           backColour={backColour}
         />
         <Board
-          current={currentCard}
+          dealtCards={dealtCards}
         />
       </div>
     </div>

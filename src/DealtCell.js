@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export default class DealtCell extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+export default function DealtCell(props) {
+  const cardImg = `${process.env.PUBLIC_URL}/img/cards/${props.card}.png`;
 
-  render() {
-    return (
-        <td id={this.props.card} className="DealtCell"></td>
-    );
-  }
+  return (
+      <td
+        id={props.card}
+        className="DealtCell"
+      >
+        {props.dealtCards.includes(props.card) ? <img className="DealtImage" src={cardImg} /> : ''}
+      </td>
+  );
 }

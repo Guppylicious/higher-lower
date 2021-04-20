@@ -15,9 +15,14 @@
 
 .DealtCell {
   width: 80px;
-  height: 130px;
+  height: 132px;
   border: #FFF 2px solid;
   border-radius: 8px;
+}
+
+.DealtImage {
+  width: 80px;
+  height: 130px;
 }
 
 .DealtNo {
