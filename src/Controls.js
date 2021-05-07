@@ -22,7 +22,10 @@ export default function Controls(props) {
           </tr>
         </tbody>
       </table>
-      <Score />
+      <Score
+        correct={props.correct}
+        wrong={props.wrong}
+      />
       <Backs />
     </div>
   );

@@ -8,6 +8,8 @@ export default function App() {
   const [dealtCards, setDealtCards] = useState([]);
   const [drawnCard, setDrawnCard] = useState('');
   const [currentCard, setCurrentCard] = useState('');
+  const [correct, setCorrect] = useState(0);
+  const [wrong, setWrong] = useState(0);
   const [remainingCards, setRemainingCards] = useState(0);
   const [backColour, setBackColour] = useState('grey');
 
@@ -22,19 +24,28 @@ export default function App() {
 
     setDeck(newDeck);
     setDrawnCard(newDrawnCard);
+    setDealtCards([]);
+    setCorrect(0);
+    setWrong(0);
     setRemainingCards(51);
   }
 
   function handleHigherClick() {
-    if (deck.length > 0) {
-      drawCard();
-    }
+    var correctScore = correct;
+    var wrongScore = wrong;
+
+    const result = deck.length > 0 ? drawCard() : '' ;
+
+    result == ('higher' || 'equal') ? setCorrect(correctScore + 1) : setWrong(wrongScore + 1);
   }
 
   function handleLowerClick() {
-    if (deck.length > 0) {
-      drawCard();
-    }
+    const correctScore = correct;
+    const wrongScore = wrong;
+
+    const result = deck.length > 0 ? drawCard() : '' ;
+
+    result == ('lower' || 'equal') ? setCorrect(correctScore + 1) : setWrong(wrongScore + 1);
   }
 
   function buildDeck()
@@ -82,6 +93,18 @@ export default function App() {
     setDeck(newDeck);
     setDealtCards(newDealtCards);
     setRemainingCards(remainingCards - 1);
+
+    const drawnCardValue = newDrawnCard.split('_');
+    const currentCardValue = newCurrentCard.split('_');
+    var result = drawnCardValue[1] > currentCardValue[1] ? 'higher' : 'lower';
+
+    if (drawnCardValue[1] == currentCardValue[1]) {
+      result = 'equal';
+    }
+
+    console.log('Drawn card ' + drawnCardValue[1] + ' is ' + result + 'than Current card ' + currentCardValue[1]);
+
+    return result;
   }
 
   return (
@@ -95,6 +118,8 @@ export default function App() {
           onHigherClick={handleHigherClick}
           onLowerClick={handleLowerClick}
           drawnCard={drawnCard}
+          correct={correct}
+          wrong={wrong}
           remaining={remainingCards}
           backColour={backColour}
         />
